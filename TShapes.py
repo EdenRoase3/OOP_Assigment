@@ -101,3 +101,26 @@ class Octahedron(Shape3D, Octapoints):
     def draw(self):
         output = ascii_magic.from_image_file('octa1.png', columns=100, char='@', back=ascii_magic.Back.WHITE)
         ascii_magic.to_terminal(output)
+
+
+class Hexagonal(Shape3D, Hexapoints):
+    def __init__(self, type, colour, a, h, O=(0, 8, 0), A=(-5, 0, 0), B=(-2.5, 0, 4.33), C=(2.5, 0, 4.33), D=(5, 0, 0),
+                 E=(2.5, 0, -4.33),
+                 F=(-2.5, 0, -4.33)):
+        super().__init__(type, colour)
+        super(Shape3D, self).__init__()
+        self.a = a
+        self.h = h
+
+    def surface_area(self):
+        surface_area = ((3 * math.sqrt(3) / 2) * self.a ** 2) + 3 * self.a * (
+            math.sqrt(self.h ** 2 + (3 * (self.a ** 2) / 4)))
+        return surface_area
+
+    def volume(self):
+        volume = (math.sqrt(3) / 2) * (self.a ** 2) * self.h
+        return volume
+
+    def draw(self):
+        output = ascii_magic.from_image_file('hex1.png', columns=50, char='@', back=ascii_magic.Back.WHITE)
+        ascii_magic.to_terminal(output)

@@ -1,5 +1,6 @@
 from TShapes import Shape3D
 from TShapes import Octahedron
+from TShapes import Hexagonal
 
 # ---------------------------------------Start-up Option Legend---------------------------------------------------------
 print('----------------------Option Menu--------------------' + '\n')
@@ -16,7 +17,16 @@ print(obj1.get_type())
 obj1 = Octahedron('diamond', (2, 3, 4), 4)
 obj1.set_A2((1, 2, 3))  # Put a tuple inside
 obj1.get_coordinates()
-print(obj1.get_colour())
 
-print(obj1.surface_area())
-obj1.draw()
+
+obj2 = Hexagonal('ddddd', (3,4,5),4,5)
+
+print(obj2.surface_area())
+print(obj2.volume())
+obj2.draw()
+
+#print(obj1.get_colour())
+
+
+#print(obj1.surface_area())
+#obj1.draw()
