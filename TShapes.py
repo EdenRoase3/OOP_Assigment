@@ -1,11 +1,11 @@
-# Initiating Class in Python (3D) Shapes
+##--0---Importing Required Packages--##
 import math
 import ascii_magic
 
-
+##--1---Creating a 3D Shape Parent Class--##
 class Shape3D:
 
-    def __init__(self, type, colour):
+    def __init__(self, type:str, colour: tuple):
         self.type = type
         self.colour = colour
 
@@ -29,7 +29,6 @@ class Shape3D:
 
     def draw(self):
         return None
-
 
 class Octapoints:
     def __init__(self, A1=(0, 0, -1), A2=(-1, 0, 0), A3=(0, 0, 1), A4=(1, 0, 0), B1=(0, 1, 0), C1=(0, -1, 0)):
@@ -74,15 +73,39 @@ class Hexapoints:
         self.E = E
         self.F = F
 
+    def set_O(self, new):
+        self.O = new
+
+    def set_A(self, new):
+        self.A = new
+
+    def set_B(self, new):
+        self.B = new
+
+    def set_C(self, new):
+        self.B = new
+
+    def set_D(self, new):
+        self.D = new
+
+    def set_E(self, new):
+        self.E = new
+
+    def set_F(self, new):
+        self.F = new
+
+    def get_coordinates(self):
+        print(
+    f'Point 1: {self.A}\nPoint 2: {self.B}\nPoint 3: {self.C}\nPoint 4: {self.D}\nPoint 5: {self.E}\nPoint 6: {self.F}')
 
 class Octahedron(Shape3D, Octapoints):
-    def __init__(self, type, colour, edge, A1=(0, 0, -1), A2=(-1, 0, 0), A3=(0, 0, 1), A4=(1, 0, 0), B1=(0, 1, 0),
+    def __init__(self, type, edge, colour=(255,255,255), A1=(0, 0, -1), A2=(-1, 0, 0), A3=(0, 0, 1), A4=(1, 0, 0), B1=(0, 1, 0),
                  C1=(0, -1, 0)):
         super().__init__(type, colour)
         super(Shape3D, self).__init__()
         self.edge = edge
 
-        # Just upload defintion and like the variables there and the methods would be iherited as well. so setting new values would not be hard, adding an additional value would not be bad.
+    # Just upload defintion and like the variables there and the methods would be iherited as well. so setting new values would not be hard, adding an additional value would not be bad.
 
     def get_edge(self):
         return self.edge
@@ -99,12 +122,12 @@ class Octahedron(Shape3D, Octapoints):
         return surface_area
 
     def draw(self):
-        output = ascii_magic.from_image_file('octa1.png', columns=100, char='@', back=ascii_magic.Back.WHITE)
+        output = ascii_magic.from_image_file('octa1.png', columns=70, char='@', back=ascii_magic.Back.WHITE)
         ascii_magic.to_terminal(output)
 
 
 class Hexagonal(Shape3D, Hexapoints):
-    def __init__(self, type, colour, a, h, O=(0, 8, 0), A=(-5, 0, 0), B=(-2.5, 0, 4.33), C=(2.5, 0, 4.33), D=(5, 0, 0),
+    def __init__(self, type,a,h,colour =(255,255,255), O=(0, 8, 0), A=(-5, 0, 0), B=(-2.5, 0, 4.33), C=(2.5, 0, 4.33), D=(5, 0, 0),
                  E=(2.5, 0, -4.33),
                  F=(-2.5, 0, -4.33)):
         super().__init__(type, colour)
@@ -122,5 +145,5 @@ class Hexagonal(Shape3D, Hexapoints):
         return volume
 
     def draw(self):
-        output = ascii_magic.from_image_file('hex1.png', columns=50, char='@', back=ascii_magic.Back.WHITE)
+        output = ascii_magic.from_image_file('hex1.png', columns=40, char='@', back=ascii_magic.Back.WHITE)
         ascii_magic.to_terminal(output)
