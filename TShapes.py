@@ -122,7 +122,7 @@ class Octahedron(Shape3D, Octapoints):
         return surface_area
 
     def draw(self):
-        output = ascii_magic.from_image_file('octa1.png', columns=70, char='@', back=ascii_magic.Back.WHITE)
+        output = ascii_magic.from_image_file('octahedron.jpg', columns=70, char='@', back=ascii_magic.Back.WHITE)
         ascii_magic.to_terminal(output)
 
 
@@ -145,5 +145,5 @@ class Hexagonal(Shape3D, Hexapoints):
         return volume
 
     def draw(self):
-        output = ascii_magic.from_image_file('hex1.png', columns=40, char='@', back=ascii_magic.Back.WHITE)
+        output = ascii_magic.from_image_file('hex1.png', columns=70, char='@', back=ascii_magic.Back.WHITE)
         ascii_magic.to_terminal(output)
