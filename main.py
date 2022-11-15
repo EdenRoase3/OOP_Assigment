@@ -54,7 +54,7 @@ def main():
     try:
         if (variable1.get() == 'Octahedron'):
             obj1 = Octahedron(variable1.get(), float(variable2.get()))
-            answer.configure(text = f'Volume = {obj1.volume():,.2f}cm^3 \n Surface Area = {obj1.surface_area():,.2f}cm^2 \n\n')
+            answer.configure(text = f'Volume = {obj1.volume():,.2f}cm^3 \n Surface Area = {obj1.surface_area():,.2f}cm^2')
             obj1.draw()
 
         elif(variable1.get() == 'Hexagonal Pyramid'):

@@ -39,8 +39,8 @@ class Octapoints:
         self.B1 = B1
         self.C1 = C1
 
-    def set_A1(self, A1):
-        self.A1 = A1
+    def set_A1(self, new):
+        self.A1 = new
 
     def set_A2(self, new):
         self.A2 = (new)
