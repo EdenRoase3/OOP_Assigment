@@ -2,7 +2,7 @@
 from TShapes import Shape3D
 from TShapes import Octahedron
 from TShapes import Hexagonal
-'''
+
 #-01---------Start-up Option Legend-----------
 print('----------------------Option Menu--------------------' + '\n')
 print('Legend of acessor/mutator methods in derived classes: \n\n 1.Get/set method for type and colour(RBG) \n 2.ASCII \
@@ -24,15 +24,15 @@ obj1.get_coordinates()
 
 obj2 = Hexagonal('ddddd',4,5,(3,4,5))
 obj2.get_coordinates()
+obj2.set_type('circle')
+print(obj2.get_type())
 
-#print(obj2.surface_area())
+print(obj2.surface_area())
 print(obj2.volume())
-#obj2.draw()
+obj2.draw()
 
-#print(obj1.get_colour())
+print(obj1.get_colour())
 
 
-#print(obj1.surface_area())
-#obj1.draw()
-
-'''
+print(obj1.surface_area())
+obj1.draw()
