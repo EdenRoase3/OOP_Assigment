@@ -6,7 +6,7 @@ import ascii_magic
 ##--1---Creating a 3D Shape Parent Class--##
 class Shape3D:
 
-    def __init__(self, type: str, colour: tuple):
+    def __init__(self, type: str, colour: tuple =(255,255,255)):
         self.type = type
         self.colour = colour
 
@@ -99,21 +99,10 @@ class Hexapoints:
 
 
 class Octahedron(Shape3D, Octapoints):
-    def __init__(self, type, edge, colour=(255, 255, 255)):
+    def __init__(self, type, edge, colour):
         super().__init__(type, colour)
         super(Shape3D, self).__init__()
         self.edge = edge
-        self.type = type
-        self.colour = colour
-
-    def get_type(self):
-        return self.type
-
-    def set_colour(self, new):
-        self.colour = new
-
-    def get_colour(self):
-        return self.colour
 
     def get_edge(self):
         return self.edge
@@ -135,22 +124,11 @@ class Octahedron(Shape3D, Octapoints):
 
 
 class Hexagonal(Shape3D, Hexapoints):
-    def __init__(self, type, a, h, colour=(255, 255, 255)):
+    def __init__(self, type, a, h, colour):
         super().__init__(type, colour)
         super(Shape3D, self).__init__()
         self.a = a
         self.h = h
-        self.type = type
-        self.colour = colour
-
-    def get_type(self):
-        return self.type
-
-    def set_colour(self, new):
-        self.colour = new
-
-    def get_colour(self):
-        return self.colour
 
     def surface_area(self):
         surface_area = ((3 * math.sqrt(3) / 2) * self.a ** 2) + 3 * self.a * (
