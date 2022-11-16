@@ -55,7 +55,10 @@ def main():
         if (variable1.get() == 'Octahedron'):
             obj1 = Octahedron(variable1.get(), float(variable2.get()))
             answer.configure(text = f'Volume = {obj1.volume():,.2f}cm^3 \n Surface Area = {obj1.surface_area():,.2f}cm^2')
-            obj1.draw()
+            obj1.draw() #-----------------------------------IMPORTANT/KEY NOTE--------------------------------------
+                        # This comand ouptuts an ASCII Drawing the Terminal instead of Tkinter due the to the nature
+                        # of the module used/imported to create the ASCII drawing from an image---------------------
+
 
         elif(variable1.get() == 'Hexagonal Pyramid'):
             obj2 = Hexagonal(variable1.get(), float(variable3.get()), float(variable4.get()))
