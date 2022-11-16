@@ -11,28 +11,26 @@ drawing method (.draw())\n 3.Get/set edge of Octahedron(set_edge or get_edge()) 
 and surface_area())\n\n')
 
 
-#-02-Testing Instantiation,Fields and Methods--
+#-02-Testing Some Instantiation,Fields and Methods--
 obj1 = Shape3D('sphere', (3, 4, 5))
 obj1.set_type('butterfly')
 obj1.set_colour((4, 5, 5))
 print(obj1.get_type())
 
 obj1 = Octahedron('diamond', 4, (2, 3, 4))
-obj1.set_A2((1, 2, 3))  # Put a tuple insid
-obj1.get_coordinates()
+obj1.set_A2((1, 2, 3))  # Put the tuple inside parentheses to set it as a 1 Element/Value
 
+obj1.get_coordinates()
+print(obj1.get_colour())
 
 obj2 = Hexagonal('ddddd',4,5,(3,4,5))
 obj2.get_coordinates()
 obj2.set_type('circle')
 print(obj2.get_type())
-
 print(obj2.surface_area())
 print(obj2.volume())
-obj2.draw()
-
-print(obj1.get_colour())
 
 
 print(obj1.surface_area())
 obj1.draw()
+obj2.draw()

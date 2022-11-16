@@ -2,10 +2,11 @@
 import math
 import ascii_magic
 
+
 ##--1---Creating a 3D Shape Parent Class--##
 class Shape3D:
 
-    def __init__(self, type:str, colour: tuple):
+    def __init__(self, type: str, colour: tuple):
         self.type = type
         self.colour = colour
 
@@ -18,17 +19,18 @@ class Shape3D:
     def get_type(self):
         return self.type
 
-    def set_type(self, type:str):
+    def set_type(self, type: str):
         self.type = type
 
     def get_colour(self):
         return self.colour
 
-    def set_colour(self, colour:str):
+    def set_colour(self, colour: str):
         self.colour = colour
 
     def draw(self):
         return None
+
 
 class Octapoints:
     def __init__(self, A1=(0, 0, -1), A2=(-1, 0, 0), A3=(0, 0, 1), A4=(1, 0, 0), B1=(0, 1, 0), C1=(0, -1, 0)):
@@ -39,22 +41,22 @@ class Octapoints:
         self.B1 = B1
         self.C1 = C1
 
-    def set_A1(self, new:float):
+    def set_A1(self, new: float):
         self.A1 = new
 
-    def set_A2(self, new:float):
+    def set_A2(self, new: float):
         self.A2 = (new)
 
-    def set_A3(self, new:float):
+    def set_A3(self, new: float):
         self.A3 = (new)
 
-    def set_A4(self, new:float):
+    def set_A4(self, new: float):
         self.A4 = (new)
 
-    def set_B1(self, new:float):
+    def set_B1(self, new: float):
         self.B1 = (new)
 
-    def set_C1(self, new:float):
+    def set_C1(self, new: float):
         self.C1 = (new)
 
     def get_coordinates(self):
@@ -73,41 +75,45 @@ class Hexapoints:
         self.E = E
         self.F = F
 
-    def set_O(self, new:tuple):
+    def set_O(self, new: tuple):
         self.O = new
 
-    def set_A(self, new:tuple):
+    def set_A(self, new: tuple):
         self.A = new
 
-    def set_B(self, new:tuple):
+    def set_B(self, new: tuple):
         self.B = new
 
     def set_C(self, new: tuple):
         self.B = new
 
-    def set_D(self, new:tuple):
+    def set_D(self, new: tuple):
         self.D = new
 
-    def set_E(self, new:tuple):
+    def set_E(self, new: tuple):
         self.E = new
+
     def get_coordinates(self):
         print(
-    f'Point 1: {self.A}\nPoint 2: {self.B}\nPoint 3: {self.C}\nPoint 4: {self.D}\nPoint 5: {self.E}\nPoint 6: {self.F}')
+            f'Point 1: {self.A}\nPoint 2: {self.B}\nPoint 3: {self.C}\nPoint 4: {self.D}\nPoint 5: {self.E}\nPoint 6: {self.F}')
+
 
 class Octahedron(Shape3D, Octapoints):
-    def __init__(self, type, edge, colour=(255,255,255)):
-        super().__init__()
+    def __init__(self, type, edge, colour=(255, 255, 255)):
+        super().__init__(type, colour)
         super(Shape3D, self).__init__()
         self.edge = edge
         self.type = type
         self.colour = colour
 
-    # Just upload defintion and like the variables there and the methods would be iherited as well. so setting new values would not be hard, adding an additional value would not be bad.
-
     def get_type(self):
         return self.type
-    def set_colour(self,new):
+
+    def set_colour(self, new):
         self.colour = new
+
+    def get_colour(self):
+        return self.colour
 
     def get_edge(self):
         return self.edge
@@ -129,11 +135,22 @@ class Octahedron(Shape3D, Octapoints):
 
 
 class Hexagonal(Shape3D, Hexapoints):
-    def __init__(self, type,a,h,colour =(255,255,255)):
+    def __init__(self, type, a, h, colour=(255, 255, 255)):
         super().__init__(type, colour)
         super(Shape3D, self).__init__()
         self.a = a
         self.h = h
+        self.type = type
+        self.colour = colour
+
+    def get_type(self):
+        return self.type
+
+    def set_colour(self, new):
+        self.colour = new
+
+    def get_colour(self):
+        return self.colour
 
     def surface_area(self):
         surface_area = ((3 * math.sqrt(3) / 2) * self.a ** 2) + 3 * self.a * (
@@ -143,14 +160,19 @@ class Hexagonal(Shape3D, Hexapoints):
     def volume(self):
         volume = (math.sqrt(3) / 2) * (self.a ** 2) * self.h
         return volume
-    def set_a(self,new):
+
+    def set_a(self, new):
         self.a = new
+
     def set_h(self, new):
         self.h = new
+
     def get_a(self):
         return self.a
+
     def get_h(self):
         return self.h
+
     def draw(self):
         output = ascii_magic.from_image_file('hex1.png', columns=70, char='@', back=ascii_magic.Back.WHITE)
         ascii_magic.to_terminal(output)
