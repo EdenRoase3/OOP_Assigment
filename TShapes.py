@@ -2,7 +2,6 @@
 import math
 import ascii_magic
 
-
 ##--1---Creating a 3D Shape Parent Class--##
 class Shape3D:
 
