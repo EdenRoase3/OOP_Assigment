@@ -5,7 +5,7 @@ import ascii_magic
 ##--1---Creating a 3D Shape Parent Class--##
 class Shape3D:
 
-    def __init__(self, type: str, colour: tuple =(255,255,255)):
+    def __init__(self, type: str, colour=(255,255,255)):
         self.type = type
         self.colour = colour
 
@@ -98,7 +98,7 @@ class Hexapoints:
 
 
 class Octahedron(Shape3D, Octapoints):
-    def __init__(self, type, edge, colour):
+    def __init__(self, type, edge, colour = (255,255,255)):
         super().__init__(type, colour)
         super(Shape3D, self).__init__()
         self.edge = edge
@@ -123,7 +123,7 @@ class Octahedron(Shape3D, Octapoints):
 
 
 class Hexagonal(Shape3D, Hexapoints):
-    def __init__(self, type, a, h, colour):
+    def __init__(self, type, a, h, colour= (255,255,255)):
         super().__init__(type, colour)
         super(Shape3D, self).__init__()
         self.a = a
