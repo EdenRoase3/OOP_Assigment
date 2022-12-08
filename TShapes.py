@@ -2,6 +2,8 @@
 import math
 import ascii_magic
 
+test = True   #Mr. Watson testing git
+
 ##--1---Creating a 3D Shape Parent Class--##
 class Shape3D:
 
